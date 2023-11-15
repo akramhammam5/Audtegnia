@@ -6,7 +6,7 @@ The term Audstegnia implies combining both Audio and Steganography. implementati
 ## Authors
 
 - [@AkramHammam](https://www.github.com/akramhammam5)
-- [@OmarHisham]()
+- [@OmarHisham](https://www.github.com/omarhishamxx)
 - [@OmarAssal]()
 - [@MarwanMagdy]()
 
@@ -16,7 +16,7 @@ The term Audstegnia implies combining both Audio and Steganography. implementati
 - Secure Communication 
 - Fast
 - Data integrity guranteed 
-- Lossless
+
 
 
 
