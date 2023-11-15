@@ -7,8 +7,8 @@ The term Audstegnia implies combining both Audio and Steganography. implementati
 
 - [@AkramHammam](https://www.github.com/akramhammam5)
 - [@OmarHisham](https://www.github.com/omarhishamxx)
-- [@OmarAssal]()
-- [@MarwanMagdy]()
+- [@OmarAssal](https://github.com/omarhishamaliassal)
+- [@MarwanMagdy](https://github.com/Marwan1241)
 
 
 ## Features
