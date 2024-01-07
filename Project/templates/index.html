@@ -1,0 +1,26 @@
+<!-- audiowatermark/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Watermarking</title>
+</head>
+<body>
+    <h1>Audio Watermarking</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if output_path %}
+        <audio controls>
+            <source src="{{ output_path }}" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+        <p><a href="{{ output_path }}" download>Download Watermarked Audio</a></p>
+    {% endif %}
+</body>
+</html>
