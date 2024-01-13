@@ -5,13 +5,16 @@
     rel="icon"
     href="https://cdn-icons-png.flaticon.com/512/5962/5962463.png"
   />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tektur:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Tektur:wght@600&display=swap"
+    rel="stylesheet"
+  />
   <title>ChatSafe Demo</title>
   <style>
     body {
-      font-family: 'Tektur', sans-serif;
+      font-family: "Tektur", sans-serif;
       background: rgb(2, 84, 166);
       background: linear-gradient(
         222deg,
@@ -22,6 +25,32 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    nav {
+      position: absolute;
+      top: 0;
+      width: 90%;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 50px;
+
+      & ul {
+        list-style: none;
+        font-size: 2rem;
+        padding: 0;
+
+        & a{
+            color: white;
+            margin-right: 30px;
+            transition: all 0.3s ease;
+
+            &:hover{
+                color: #1976d2;
+            }
+        }
+      }
     }
 
     .upload-form {
@@ -89,9 +118,24 @@
       height: 100%;
       z-index: -1;
       fill: #0000005e;
+      }
     }
   </style>
 </head>
+
+<nav>
+  <img
+    style="width: 70px"
+    src="https://cdn-icons-png.flaticon.com/512/5962/5962463.png"
+    alt=""
+  />
+  <ul>
+    <li>
+      <a href="#">Encode</a>
+      <a href="./Decode.html">Decode</a>
+    </li>
+  </ul>
+</nav>
 
 <svg class="blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
   <path
