@@ -1,0 +1,51 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <title>CHATAPP</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
+</head>
+<body>
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" width="70" height="34"
+                    class="d-inline-block align-text-top">
+                CHATAPP
+            </a>
+        
+            {% if user.is_authenticated %}
+            <div>
+                <a href="{% url 'call' %}" class="btn btn-outline-primary">Start A Call</a>
+            </div>
+            <a class="btn btn-warning" href="{% url 'logout' %}">
+                Logout
+            </a>
+            {% endif %}
+        </div>
+    </nav>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+    {% block content %}
+    {% endblock content %}
+    <br>
+    <footer>
+        <nav class="navbar bg-light border-bottom border-body" data-bs-theme="dark">
+            <div class="container-fluid">
+                <p>Created By <a href="//ibizn.com/sifat">@Ashraful Haque Sifat</a></p>
+            </div>
+        </nav>
+    </footer>
+</body>
+</html>
