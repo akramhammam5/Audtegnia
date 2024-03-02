@@ -10,24 +10,11 @@ from django.contrib.auth.password_validation import (
     MinimumLengthValidator, CommonPasswordValidator,
     NumericPasswordValidator, UserAttributeSimilarityValidator
 )
-from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad, unpad
-from base64 import b64encode, b64decode
-import os
 
-def encrypt_message(message):
-    cipher = AES.new(SECRET_KEY, AES.MODE_CBC)
-    ct_bytes = cipher.encrypt(pad(message.encode(), AES.block_size))
-    iv = b64encode(cipher.iv).decode('utf-8')
-    ct = b64encode(ct_bytes).decode('utf-8')
-    return iv, ct
 
-def decrypt_message(iv, ct):
-    iv = b64decode(iv)
-    ct = b64decode(ct)
-    cipher = AES.new(SECRET_KEY, AES.MODE_CBC, iv=iv)
-    pt = unpad(cipher.decrypt(ct), AES.block_size).decode('utf-8')
-    return pt
+def index(request):
+    return render(request, 'chat/index.html')
+
 def home(request):
 
     if request.method == "POST":
@@ -37,10 +24,10 @@ def home(request):
         if user is not None:
             login(request, user)
             messages.success(request, "Login successful!")
-            return redirect('home')
+            return redirect('login')
         else:
             messages.success(request, 'Invalid Username or Password, Please Try Again.')
-            return redirect('home')
+            return redirect('login')
     
     if request.user.is_authenticated:
         if Chat.objects.filter(users=request.user).exists():
@@ -66,7 +53,7 @@ def home(request):
 
 def signup(request):
     if request.user.is_authenticated:
-        return redirect('home')
+        return redirect('login')
     if request.method == "POST":
         username = request.POST['username']
         email = request.POST['email']
@@ -81,17 +68,17 @@ def signup(request):
                 # user.save()
                 login(request, user)
                 messages.success(request, f'Account Created Successfully. Welcome {username}')
-                return redirect('home')
+                return redirect('login')
             else:
                 messages.success(request, "Passwords don't match")
     return render(request, 'chat/signup.html')
 
 
-@login_required(login_url='home')
+@login_required(login_url='login')
 def logout_user(request):
     logout(request)
     messages.success(request, "Successfully Logged Out!")
-    return redirect('home')
+    return redirect('login')
 
 
 

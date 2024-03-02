@@ -3,7 +3,6 @@ from Crypto import Random
 import os
 
 
-
 def pad(text):
     # Add padding to the text to make its length a multiple of 8
     return text + b"\0" * (Blowfish.block_size - len(text) % Blowfish.block_size)

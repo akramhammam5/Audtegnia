@@ -7,7 +7,7 @@
         <div class="container">
             <br>
             <h3>@{{user.username}}</h3>
-            <form class="d-flex" role="search" action="{% url 'home' %}" style="inline-size: 70%;" method="GET">
+            <form class="d-flex" role="search" action="{% url 'login' %}" style="inline-size: 70%;" method="GET">
                 <input class="form-control me-2" name="q" type="search" placeholder="Search In Inbox" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
