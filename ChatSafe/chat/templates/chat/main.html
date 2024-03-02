@@ -21,9 +21,6 @@
             </a>
         
             {% if user.is_authenticated %}
-            <div>
-                <a href="{% url 'call' %}" class="btn btn-outline-primary">Start A Call</a>
-            </div>
             <a class="btn btn-warning" href="{% url 'logout' %}">
                 Logout
             </a>
