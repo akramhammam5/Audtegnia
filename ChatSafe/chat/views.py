@@ -10,6 +10,10 @@ from django.contrib.auth.password_validation import (
     MinimumLengthValidator, CommonPasswordValidator,
     NumericPasswordValidator, UserAttributeSimilarityValidator
 )
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad, unpad
+from base64 import b64encode, b64decode
+import os
 
 def encrypt_message(message):
     cipher = AES.new(SECRET_KEY, AES.MODE_CBC)
