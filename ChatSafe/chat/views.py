@@ -11,7 +11,19 @@ from django.contrib.auth.password_validation import (
     NumericPasswordValidator, UserAttributeSimilarityValidator
 )
 
+def encrypt_message(message):
+    cipher = AES.new(SECRET_KEY, AES.MODE_CBC)
+    ct_bytes = cipher.encrypt(pad(message.encode(), AES.block_size))
+    iv = b64encode(cipher.iv).decode('utf-8')
+    ct = b64encode(ct_bytes).decode('utf-8')
+    return iv, ct
 
+def decrypt_message(iv, ct):
+    iv = b64decode(iv)
+    ct = b64decode(ct)
+    cipher = AES.new(SECRET_KEY, AES.MODE_CBC, iv=iv)
+    pt = unpad(cipher.decrypt(ct), AES.block_size).decode('utf-8')
+    return pt
 def home(request):
 
     if request.method == "POST":
