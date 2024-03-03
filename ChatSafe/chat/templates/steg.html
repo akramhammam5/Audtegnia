@@ -119,7 +119,19 @@
       z-index: -1;
       fill: #0000005e;
       }
-    
+  .extract-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: green; /* Changed color to green */
+  color: white;
+  border-radius: 5px;
+  border: 1px solid green; /* Changed border color to green */
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
   </style>
 </head>
 
@@ -151,6 +163,7 @@
     </div>
     <button type="submit">Submit</button>
   </form>
+  <a href="{% url 'extract' %}" class="extract-button">Extract</a>
 </div>
 <script>
   function hideMessage() {
