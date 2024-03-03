@@ -4,14 +4,47 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import *
+from .utils import *
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext as _
 from django.contrib.auth.password_validation import (
     MinimumLengthValidator, CommonPasswordValidator,
     NumericPasswordValidator, UserAttributeSimilarityValidator
 )
+from django.shortcuts import render
+from django.http import HttpResponse
+from .utils import *
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives import padding
+from base64 import b64encode, b64decode
 
 
+def hide(request):
+    if request.method == 'POST':
+        audiofile = request.FILES.get('file')
+        secretmsg = request.POST.get('text')
+        outputfile = '/home/elliot/Documents/Grad/Implementation/ChatSafe/ChatSafe/audio/output.wav'
+        if audiofile and secretmsg and outputfile:
+            try:
+                em_audio(audiofile, secretmsg , outputfile)
+                return render(request,"success.html")
+            except Exception as e:
+                return HttpResponse(f"Error hiding message: {str(e)}")
+    return render(request, 'steg.html')
+        
+        
+def extract(request):
+    if request.method == 'POST':
+        audiofile = request.FILES.get('file')
+        if audiofile:
+            try:
+                extracted_message = ex_msg(audiofile)
+                return render(request, 'extracted_message.html', {'secret_message': extracted_message})
+            except Exception as e:
+                return render(request, 'error.html', {'error_message': f"Error extracting message: {str(e)}"})
+    return render(request, 'Decode.html')
+    
 def index(request):
     return render(request, 'chat/index.html')
 

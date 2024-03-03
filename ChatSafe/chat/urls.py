@@ -9,4 +9,6 @@ urlpatterns = [
     path('chat/<int:pk>/', views.chat_view, name='chat'),
     path('new_chat/<int:pk>', views.new_chat, name='new-chat'),
     path('call/', views.videocall, name='call'),
+    path('steg/', views.hide , name='steg'),
+    path('extract/', views.extract , name='extract'),
 ]
