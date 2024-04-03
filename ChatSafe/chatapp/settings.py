@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-
+import braintree
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -125,6 +125,15 @@ EMAIL_HOST_USER = ' akramhammam59@gmail.com'
 EMAIL_HOST_PASSWORD = 'onfp cams kbqr hkpi '  
 
 EMAIL_TIMEOUT = 30 
+
+
+
+braintree.Configuration.configure(
+    braintree.Environment.Sandbox,
+    merchant_id='6fxmvs54hmrhx68j',
+    public_key='52yhspkqfm2cy254',
+    private_key='02a4e6ecde8d50902548b74089b0236d'
+)
 
 
 # Static files (CSS, JavaScript, Images)
