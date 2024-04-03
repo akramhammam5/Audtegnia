@@ -23,11 +23,45 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from .utils import send_password_reset_email
-from .forms import PasswordResetForm
+from .forms import PasswordResetForm, EditUsernameForm
 import sounddevice as sd
 from scipy.io.wavfile import write
 from django.http import JsonResponse
 from .models import AudioMessage
+import braintree
+
+
+
+def pay(request):
+    client_token = braintree.ClientToken.generate()
+    return render(request, 'payment.html', {'client_token': client_token})
+
+def payment(request):
+    if request.method == 'POST':
+        nonce = request.POST.get('payment_method_nonce')
+        amount = '150.00'  # Example amount
+        client_token = braintree.ClientToken.generate()
+        
+        result = braintree.Transaction.sale({
+            "amount": amount,
+            "payment_method_nonce": nonce,
+            "options": {
+                "submit_for_settlement": True
+            }
+        })
+
+        if result.is_success:
+            # Process payment and upgrade user if successful
+            
+            return render(request, 'chat/payment_success.html')
+        
+        else:
+            # Display error message if payment fails
+            error_msg = result.message
+            return render(request, 'chat/payment_fail.html', {'error_msg': error_msg})
+
+    return render(request, 'chat/payment.html')
+
 
 def record_and_send(request):
     freq = 44100
