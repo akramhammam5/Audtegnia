@@ -16,7 +16,7 @@ Implementation of an encryption security layer to improve communication security
 - Secure Communication 
 - Fast
 - Data integrity guranteed
-- Audstegnia feature to hide Text inside Audio file amd Send it :)
+- Audstegnia feature to hide Text inside Audio file and Send it :)
 
 
 
