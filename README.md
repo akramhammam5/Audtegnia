@@ -1,6 +1,6 @@
 # ChatSafe
 It is well known that Steganography and encryption together represent a great combination to secure most of communications and provide data confidentiality and integrity. In this repo you'll see the effect of adding security layers to systems.
-Implementation of an extra security layer improve communication security and multi-layer security models.
+Implementation of an encryption security layer to improve communication security. About Steganography we provided our tool Audstegnia to try with the Chat Application.
 
 
 ## Authors
@@ -15,7 +15,8 @@ Implementation of an extra security layer improve communication security and mul
 
 - Secure Communication 
 - Fast
-- Data integrity guranteed 
+- Data integrity guranteed
+- Audstegnia feature to hide Text inside Audio file amd Send it :)
 
 
 
