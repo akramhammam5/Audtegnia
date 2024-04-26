@@ -1,0 +1,39 @@
+{% extends 'chat/main.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="container">
+        <br>
+        <a href="/" class="btn btn-outline-dark"><< INBOX</a>
+        <hr><br>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <input type="text" placeholder="Your Message Here..." name="body" class="form-control" id="text" aria-describedby="text">
+            </div>
+            <button type="submit" class="btn btn-success">Send</button>
+        </form>
+        <a href="{% url 'create_voice_note' %} "><button id="record-btn" class="btn btn-primary">Send Voice Notes</button></a>
+        <br><br>
+        <a href="{% url 'receive_voice_notes' %} "><button id="record-btn" class="btn btn-primary">Receive Voice Notes</button></a>
+    </div>
+    <br>
+    <div class="container">
+        {% for body_message in body_messages %}
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <p><i>@{{body_message.user.username}}</i></p>
+                <h4>{{body_message}}</h4>
+                <h10>{{body_message.created}}</h10>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock content %}
+
