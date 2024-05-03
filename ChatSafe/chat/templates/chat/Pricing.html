@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing Plan</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Freeman&display=swap");
+      body {
+        font-family: "Freeman", sans-serif;
+        background-color: #f4f4f9;
+        background: url("./bg-1.png");
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      h2 {
+        color: #2a9d2d;
+        font-size: 3rem;
+        margin: 0;
+      }
+      .container {
+        width: 90%;
+        margin: auto;
+        overflow: hidden;
+      }
+      .section-title-wrap {
+        text-align: center;
+        color: #333;
+        margin-bottom: 50px;
+      }
+
+      .pricing-cards-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .pricing-card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        padding: 20px;
+        margin-bottom: 20px;
+        width: 400px;
+        height: 600px;
+      }
+      .pricing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+      .pricing-header h3 {
+        color: #333;
+        margin: 0 0 10px 0;
+      }
+      .pricing-price {
+        color: #2a9d2d;
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+      .pricing-body ul {
+        padding: 0 12px;
+      }
+      .pricing-body ul li {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+      }
+      .pricing-body ul li:last-child {
+        border-bottom: none;
+      }
+      .btn {
+        text-decoration: none;
+        padding: 10px 20px;
+        color: white;
+        background-color: #2a9d2d;
+        border-radius: 5px;
+        display: inline-block;
+        margin-top: 20px;
+      }
+      .btn-primary {
+        background-color: #2a9d2d;
+      }
+      .btn-secondary {
+        background-color: #6c757d;
+      }
+      .avatar-image {
+        width: 50px;
+        height: auto;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="pricing section-padding" id="section_4">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-12 mx-auto">
+            <div
+              class="section-title-wrap d-flex justify-content-center align-items-center mb-5"
+            >
+              <img
+                src="{% static '/images/Affordable_Pricing-1024-590917253.png' %}"
+                class="avatar-image img-fluid"
+                alt=""
+              />
+              <h2 class="text-dark ms-4 mb-0">Pricing Plans</h2>
+            </div>
+            <div class="pricing-cards-container row pt-lg-5">
+              <div class="col-lg-6 col-12">
+                <div class="pricing-card">
+                  <div class="pricing-header">
+                    <h3 class="mb-0">Free Plan</h3>
+                    <p class="pricing-price">Free</p>
+                  </div>
+                  <div class="pricing-body">
+                    <ul class="list-unstyled">
+                      <li>Send messages securely</li>
+                      <li>Unlimited text messages</li>
+                    </ul>
+                    <a href="{% url 'signup' %}" class="btn btn-primary"
+                      >Get Started</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-12">
+                <div class="pricing-card">
+                  <div class="pricing-header">
+                    <h3 class="mb-0">Premium Plan</h3>
+                    <p class="pricing-price">150 EGP/month</p>
+                  </div>
+                  <div class="pricing-body">
+                    <ul class="list-unstyled">
+                      <li>Send voice messages</li>
+                      <li>Access to premium features</li>
+                    </ul>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'payment' %}" class="btn btn-secondary"
+                      >Upgrade Now</a
+                    >
+                    {% else %}
+                    <p>
+                      Please <a href="{% url 'login' %}">login</a> to upgrade.
+                    </p>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
