@@ -20,20 +20,17 @@
     </div>
     <br>
     <div class="container">
-        {% for body_message in body_messages %}
+        {% for message in messages %}  <!-- Use 'messages' instead of 'body_messages' -->
         <br>
         <div class="card">
             <div class="card-body">
-                <p><i>@{{body_message.user.username}}</i></p>
-                <h4>{{body_message}}</h4>
-                <h10>{{body_message.created}}</h10>
+                <p><i>@{{ message.0 }}</i></p>
+                <h4>{{ message.1 }}</h4>
+                <!-- Add any additional message details here -->
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
 
-
-
 {% endblock content %}
-

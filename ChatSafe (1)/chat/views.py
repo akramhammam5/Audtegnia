@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect
+#view.py
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import *
-from .utils import *
+
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext as _
 from django.contrib.auth.password_validation import (
@@ -28,11 +28,35 @@ import sounddevice as sd
 from scipy.io.wavfile import write
 from django.http import JsonResponse
 import braintree
+from django.http import HttpResponseServerError
+import sys
+from .models import *
+from .utils import *
+
+
+@login_required
+def chat_view(request, pk):
+    chat = get_object_or_404(Chat, pk=pk)
+    if request.method == "POST":
+        message_text = request.POST.get('body', '')
+        if message_text:
+            encrypted_message = encrypt_message(message_text, chat)
+            Message.objects.create(user=request.user, chat=chat, body=encrypted_message)
+            messages.success(request, "Message sent successfully.")
+        else:
+            messages.error(request, "Message cannot be empty.")
+        return redirect('chat', pk=pk)
+
+    chat_messages = Message.objects.filter(chat=chat)
+    decrypted_messages = [(message.user.username, decrypt_message(message.body, chat)) for message in chat_messages]
+    context = {'chat': chat, 'messages': decrypted_messages}
+    return render(request, 'chat/chat.html', context)
 
 
 @login_required
 def record(request):
    return render(request, 'chat/create_voice_note.html', {'form': form})
+
 @login_required
 def create_voice_note(request):
     if request.method == 'POST':
@@ -206,30 +230,8 @@ def logout_user(request):
 key = Fernet.generate_key()
 cipher = Fernet(key)
 
-@login_required(login_url='home')
-def chat_view(request, pk):
-    chat = Chat.objects.get(id=pk)
-    messages = Message.objects.filter(chat=chat)
 
-    if request.method == "POST":
-        body = request.POST.get('body')
-        encrypted_body = cipher.encrypt(body.encode()).decode()  # Encrypt the message body
-        Message.objects.create(user=request.user, chat=chat, body=encrypted_body)
 
-    # Decrypt the messages before passing them to the template
-    decrypted_messages = []
-    for message in messages:
-        try:
-            decrypted_body = cipher.decrypt(message.body.encode()).decode()
-            
-            decrypted_messages.append(decrypted_body)
-        except:
-            pass
-
-    context = {
-        'body_messages': decrypted_messages,
-    }
-    return render(request, 'chat/chat.html', context)
 
 @login_required(login_url='home')
 def new_chat(request, pk):

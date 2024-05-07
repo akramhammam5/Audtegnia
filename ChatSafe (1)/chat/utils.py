@@ -1,8 +1,12 @@
+#utils.py
 import os
 import wave
 import argparse
 from Crypto.Cipher import AES
-from cryptography.fernet import Fernet
+from cryptography.fernet import Fernet, InvalidToken
+import logging
+from .models import ChatKey
+import base64
 
 
 def em_audio(af, string, output):
@@ -29,17 +33,32 @@ def ex_msg(af):
     waveaudio.close()
     return msg
 
-key = Fernet.generate_key()
-cipher_suite = Fernet(key)
 
-def encrypt_message(message):
-    encrypted_message = cipher_suite.encrypt(message.encode())
-    return encrypted_message
 
-def decrypt_message(encrypted_message):
-    decrypted_message = cipher_suite.decrypt(encrypted_message)
-    return decrypted_message.decode()
+def encrypt_message(message, chat):
+    chat_key = ChatKey.objects.get(chat=chat)
+    print(f"Encryption key: {chat_key.key}")  # Debug: Print encryption key
+    cipher_suite = Fernet(chat_key.key.encode())
+    encrypted_data = cipher_suite.encrypt(message.encode())
+    encoded_data = base64.b64encode(encrypted_data).decode()  # Convert binary data to base64 encoded string
+    print(f"Encrypted message (ciphertext): {encoded_data}")  # Debug: Print ciphertext after encryption
+    return encoded_data
 
+def decrypt_message(encrypted_message, chat):
+    chat_key = ChatKey.objects.get(chat=chat)
+    print(f"Decryption key: {chat_key.key}")  # Debug: Print decryption key
+    print(f"Encrypted message to decrypt (ciphertext): {encrypted_message}")  # Debug: Print ciphertext before decryption
+    cipher_suite = Fernet(chat_key.key.encode())
+    try:
+        decoded_data = base64.b64decode(encrypted_message.encode())  # Convert base64 encoded string back to binary
+        decrypted_data = cipher_suite.decrypt(decoded_data).decode()
+        print(f"Decrypted message (plaintext): {decrypted_data}")  # Debug: Print plaintext after decryption
+        return decrypted_data
+    except InvalidToken:
+        return "<Invalid decryption>"
+    except Exception as e:
+        return f"<Decryption error: {str(e)}>"
+    
 import requests
 from django.conf import settings
 

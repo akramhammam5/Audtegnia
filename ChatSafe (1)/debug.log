@@ -1,0 +1,564 @@
+Watching for file changes with StatReloader
+Accessing chat with ID: 11
+Received message to be sent: test logging
+Encrypting message with key nBJUpsqx4YCzUxUnX2xdCYDCZNf2lv2tQsJpMPeDBHY=: b'gAAAAABmOomQA35iNbyjsP4mwyPnY5YwgtgG69snWIby8ANc2q6UNIKmDg4E1u857J6Y5X6IEjOgEsZXd48v8dBMRLokHou2zw=='
+Encrypted message for chat 11: b'gAAAAABmOomQA35iNbyjsP4mwyPnY5YwgtgG69snWIby8ANc2q6UNIKmDg4E1u857J6Y5X6IEjOgEsZXd48v8dBMRLokHou2zw=='
+Message ID 90 saved successfully for chat 11
+Accessing chat with ID: 11
+Retrieving and decrypting messages for chat 11 with key: nBJUpsqx4YCzUxUnX2xdCYDCZNf2lv2tQsJpMPeDBHY=
+Encrypted message before decryption: b'gAAAAABmOomQA35iNbyjsP4mwyPnY5YwgtgG69snWIby8ANc2q6UNIKmDg4E1u857J6Y5X6IEjOgEsZXd48v8dBMRLokHou2zw=='
+Failed to decrypt message: InvalidToken - 
+Decrypted message: <Invalid decryption>
+Encrypted message before decryption: b'gAAAAABmOof5N07KUJ3LBK9Z5MzVjA9_KlgZZRs0lAZxYyckCv5ljqdWeodB9-L4vBTeg99TDQaWOYjbToTmLAELmwuEA1Yedw=='
+Failed to decrypt message: InvalidToken - 
+Decrypted message: <Invalid decryption>
+Watching for file changes with StatReloader
+Accessing chat with ID: 11
+Retrieving and decrypting messages for chat 11 with key: nBJUpsqx4YCzUxUnX2xdCYDCZNf2lv2tQsJpMPeDBHY=
+Encrypted message before decryption: b'gAAAAABmOomQA35iNbyjsP4mwyPnY5YwgtgG69snWIby8ANc2q6UNIKmDg4E1u857J6Y5X6IEjOgEsZXd48v8dBMRLokHou2zw=='
+Failed to decrypt message: InvalidToken - 
+Decrypted message: <Invalid decryption>
+Encrypted message before decryption: b'gAAAAABmOof5N07KUJ3LBK9Z5MzVjA9_KlgZZRs0lAZxYyckCv5ljqdWeodB9-L4vBTeg99TDQaWOYjbToTmLAELmwuEA1Yedw=='
+Failed to decrypt message: InvalidToken - 
+Decrypted message: <Invalid decryption>
+Accessing chat with ID: 11
+Retrieving and decrypting messages for chat 11 with key: nBJUpsqx4YCzUxUnX2xdCYDCZNf2lv2tQsJpMPeDBHY=
+Encrypted message before decryption: b'gAAAAABmOomQA35iNbyjsP4mwyPnY5YwgtgG69snWIby8ANc2q6UNIKmDg4E1u857J6Y5X6IEjOgEsZXd48v8dBMRLokHou2zw=='
+Failed to decrypt message: InvalidToken - 
+Decrypted message: <Invalid decryption>
+Encrypted message before decryption: b'gAAAAABmOof5N07KUJ3LBK9Z5MzVjA9_KlgZZRs0lAZxYyckCv5ljqdWeodB9-L4vBTeg99TDQaWOYjbToTmLAELmwuEA1Yedw=='
+Failed to decrypt message: InvalidToken - 
+Decrypted message: <Invalid decryption>
+Watching for file changes with StatReloader
+Accessing chat with ID: 11
+Retrieving and decrypting messages for chat 11 with key: nBJUpsqx4YCzUxUnX2xdCYDCZNf2lv2tQsJpMPeDBHY=
+Encrypted message before decryption: b'gAAAAABmOomQA35iNbyjsP4mwyPnY5YwgtgG69snWIby8ANc2q6UNIKmDg4E1u857J6Y5X6IEjOgEsZXd48v8dBMRLokHou2zw=='
+Failed to decrypt message: InvalidToken - 
+Decrypted message: <Invalid decryption>
+Encrypted message before decryption: b'gAAAAABmOof5N07KUJ3LBK9Z5MzVjA9_KlgZZRs0lAZxYyckCv5ljqdWeodB9-L4vBTeg99TDQaWOYjbToTmLAELmwuEA1Yedw=='
+Failed to decrypt message: InvalidToken - 
+Decrypted message: <Invalid decryption>
+Accessing chat with ID: 11
+Received message to be sent: hi
+Encrypting message with key nBJUpsqx4YCzUxUnX2xdCYDCZNf2lv2tQsJpMPeDBHY=: b'gAAAAABmOoxl6HJ2vNIYB-o0uhuHsT-NTdOzXPBPqVoXnrydNbrea6BGS2hs7FLpqzotBBueIm50G2QsyyDxSj8wpEirYH0z-Q=='
+Encrypted message for chat 11: b'gAAAAABmOoxl6HJ2vNIYB-o0uhuHsT-NTdOzXPBPqVoXnrydNbrea6BGS2hs7FLpqzotBBueIm50G2QsyyDxSj8wpEirYH0z-Q=='
+Message ID 91 saved successfully for chat 11
+Accessing chat with ID: 11
+Retrieving and decrypting messages for chat 11 with key: nBJUpsqx4YCzUxUnX2xdCYDCZNf2lv2tQsJpMPeDBHY=
+Encrypted message before decryption: b'gAAAAABmOoxl6HJ2vNIYB-o0uhuHsT-NTdOzXPBPqVoXnrydNbrea6BGS2hs7FLpqzotBBueIm50G2QsyyDxSj8wpEirYH0z-Q=='
+Failed to decrypt message: InvalidToken - 
+Decrypted message: <Invalid decryption>
+Encrypted message before decryption: b'gAAAAABmOomQA35iNbyjsP4mwyPnY5YwgtgG69snWIby8ANc2q6UNIKmDg4E1u857J6Y5X6IEjOgEsZXd48v8dBMRLokHou2zw=='
+Failed to decrypt message: InvalidToken - 
+Decrypted message: <Invalid decryption>
+Encrypted message before decryption: b'gAAAAABmOof5N07KUJ3LBK9Z5MzVjA9_KlgZZRs0lAZxYyckCv5ljqdWeodB9-L4vBTeg99TDQaWOYjbToTmLAELmwuEA1Yedw=='
+Failed to decrypt message: InvalidToken - 
+Decrypted message: <Invalid decryption>
+Internal Server Error: /new_chat/11
+Traceback (most recent call last):
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\views.py", line 299, in new_chat
+    return redirect('chat', pk=chat.id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'chat' not found. 'chat' is not a valid view function or pattern name.
+C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Accessing chat with ID: 12
+Retrieving and decrypting messages for chat 12 with key: 4ljXTQRIYVAmdVAT395tsC1nLCjjRW1UkfVeO_jv6BE=
+Accessing chat with ID: 12
+Received message to be sent: hi
+Encrypting message with key 4ljXTQRIYVAmdVAT395tsC1nLCjjRW1UkfVeO_jv6BE=: b'gAAAAABmOo100RQnEK3Zqml0Nb5kvp8RznixYTNTJHH4GsSFGN_kc7GjpiXJQXEfJzvnqKTMtNlDMZSNQjMk91Q1eq0CCXAk-w=='
+Encrypted message for chat 12: b'gAAAAABmOo100RQnEK3Zqml0Nb5kvp8RznixYTNTJHH4GsSFGN_kc7GjpiXJQXEfJzvnqKTMtNlDMZSNQjMk91Q1eq0CCXAk-w=='
+Message ID 92 saved successfully for chat 12
+Internal Server Error: /chat/12/
+Traceback (most recent call last):
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\views.py", line 69, in chat_view
+    return redirect('chat_view', pk=pk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'chat_view' not found. 'chat_view' is not a valid view function or pattern name.
+C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Accessing chat with ID: 12
+Retrieving and decrypting messages for chat 12 with key: 4ljXTQRIYVAmdVAT395tsC1nLCjjRW1UkfVeO_jv6BE=
+Encrypted message before decryption: b'gAAAAABmOo100RQnEK3Zqml0Nb5kvp8RznixYTNTJHH4GsSFGN_kc7GjpiXJQXEfJzvnqKTMtNlDMZSNQjMk91Q1eq0CCXAk-w=='
+Failed to decrypt message: InvalidToken - 
+Decrypted message: <Invalid decryption>
+Internal Server Error: /new_chat/0
+Traceback (most recent call last):
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\views.py", line 313, in new_chat
+    return render(request, "chat/new_chat.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'new-chat' not found. 'new-chat' is not a valid view function or pattern name.
+Internal Server Error: /new_chat/0
+Traceback (most recent call last):
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\views.py", line 313, in new_chat
+    return render(request, "chat/new_chat.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'new-chat' not found. 'new-chat' is not a valid view function or pattern name.
+Not Found: /chat/11/
+Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\views.py", line 235, in home
+    return render(request, 'chat/home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'new-chat' not found. 'new-chat' is not a valid view function or pattern name.
+Accessing chat with ID: 12
+Retrieving and decrypting messages for chat 12 with key: 4ljXTQRIYVAmdVAT395tsC1nLCjjRW1UkfVeO_jv6BE=
+Encrypted message before decryption: b'gAAAAABmOo100RQnEK3Zqml0Nb5kvp8RznixYTNTJHH4GsSFGN_kc7GjpiXJQXEfJzvnqKTMtNlDMZSNQjMk91Q1eq0CCXAk-w=='
+Failed to decrypt message: InvalidToken - 
+Decrypted message: <Invalid decryption>
+Accessing chat with ID: 12
+Received message to be sent: hi
+Encrypting message with key 4ljXTQRIYVAmdVAT395tsC1nLCjjRW1UkfVeO_jv6BE=: b'gAAAAABmOo8Y3EZ1WBbSKdTL3EqXuF5wb7xLajBXul9ubJGxqGYoTqQzwK8hd9qPJJShr5dhP_Q9gNZ1CyvGk9HrWKJrAe1KXg=='
+Encrypted message for chat 12: b'gAAAAABmOo8Y3EZ1WBbSKdTL3EqXuF5wb7xLajBXul9ubJGxqGYoTqQzwK8hd9qPJJShr5dhP_Q9gNZ1CyvGk9HrWKJrAe1KXg=='
+Message ID 93 saved successfully for chat 12
+Internal Server Error: /chat/12/
+Traceback (most recent call last):
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\views.py", line 69, in chat_view
+    return redirect('chat_view', pk=pk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'chat_view' not found. 'chat_view' is not a valid view function or pattern name.
+C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\views.py changed, reloading.
+Watching for file changes with StatReloader
+Accessing chat with ID: 12
+Received message to be sent: hi
+Encrypting message with key 4ljXTQRIYVAmdVAT395tsC1nLCjjRW1UkfVeO_jv6BE=: b'gAAAAABmOo9sjXIiW7h9GPBOMV4AKlY33fPNToeCyWvQGy2AFcmEbMqNhWylVa3G5bGs1xBCNeS1f9DS12ZnJ12fiII1LwY6Ug=='
+Encrypted message for chat 12: b'gAAAAABmOo9sjXIiW7h9GPBOMV4AKlY33fPNToeCyWvQGy2AFcmEbMqNhWylVa3G5bGs1xBCNeS1f9DS12ZnJ12fiII1LwY6Ug=='
+Message ID 94 saved successfully for chat 12
+Accessing chat with ID: 12
+Retrieving and decrypting messages for chat 12 with key: 4ljXTQRIYVAmdVAT395tsC1nLCjjRW1UkfVeO_jv6BE=
+Encrypted message before decryption: b'gAAAAABmOo9sjXIiW7h9GPBOMV4AKlY33fPNToeCyWvQGy2AFcmEbMqNhWylVa3G5bGs1xBCNeS1f9DS12ZnJ12fiII1LwY6Ug=='
+Failed to decrypt message: InvalidToken - 
+Decrypted message: <Invalid decryption>
+Encrypted message before decryption: b'gAAAAABmOo8Y3EZ1WBbSKdTL3EqXuF5wb7xLajBXul9ubJGxqGYoTqQzwK8hd9qPJJShr5dhP_Q9gNZ1CyvGk9HrWKJrAe1KXg=='
+Failed to decrypt message: InvalidToken - 
+Decrypted message: <Invalid decryption>
+Encrypted message before decryption: b'gAAAAABmOo100RQnEK3Zqml0Nb5kvp8RznixYTNTJHH4GsSFGN_kc7GjpiXJQXEfJzvnqKTMtNlDMZSNQjMk91Q1eq0CCXAk-w=='
+Failed to decrypt message: InvalidToken - 
+Decrypted message: <Invalid decryption>
+Internal Server Error: /new_chat/0
+Traceback (most recent call last):
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\views.py", line 313, in new_chat
+    return render(request, "chat/new_chat.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'new-chat' not found. 'new-chat' is not a valid view function or pattern name.
+Accessing chat with ID: 13
+Retrieving and decrypting messages for chat 13 with key: QQLFsewBnpe6pEcFUVFZ1QteJfFU8kCRpA_DD6mxyGw=
+Accessing chat with ID: 13
+Received message to be sent: hi
+Encrypting message with key QQLFsewBnpe6pEcFUVFZ1QteJfFU8kCRpA_DD6mxyGw=: b'gAAAAABmOpAW5h8UGzzdTyqwvNAb9YQCpsGIbEUnGeYKt8CqtWrqYHrzCL1UwtJ46bNW3RPJlu1qxxMhIFdMl_H1-XxmzTh__w=='
+Encrypted message for chat 13: b'gAAAAABmOpAW5h8UGzzdTyqwvNAb9YQCpsGIbEUnGeYKt8CqtWrqYHrzCL1UwtJ46bNW3RPJlu1qxxMhIFdMl_H1-XxmzTh__w=='
+Message ID 95 saved successfully for chat 13
+Accessing chat with ID: 13
+Retrieving and decrypting messages for chat 13 with key: QQLFsewBnpe6pEcFUVFZ1QteJfFU8kCRpA_DD6mxyGw=
+Encrypted message before decryption: b'gAAAAABmOpAW5h8UGzzdTyqwvNAb9YQCpsGIbEUnGeYKt8CqtWrqYHrzCL1UwtJ46bNW3RPJlu1qxxMhIFdMl_H1-XxmzTh__w=='
+Failed to decrypt message: InvalidToken - 
+Decrypted message: <Invalid decryption>
+Watching for file changes with StatReloader
+C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\utils.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\utils.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /chat/13/
+C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\utils.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\admin.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /chat/14/
+Traceback (most recent call last):
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\views.py", line 51, in chat_view
+    decrypted_messages = [(message.user.username, decrypt_message(message.body, chat)) for message in chat_messages]
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\utils.py", line 43, in decrypt_message
+    chat_key = ChatKey.objects.get(chat=chat)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+chat.models.ChatKey.DoesNotExist: ChatKey matching query does not exist.
+Internal Server Error: /chat/14/
+Traceback (most recent call last):
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\views.py", line 51, in chat_view
+    decrypted_messages = [(message.user.username, decrypt_message(message.body, chat)) for message in chat_messages]
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\utils.py", line 43, in decrypt_message
+    chat_key = ChatKey.objects.get(chat=chat)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+chat.models.ChatKey.DoesNotExist: ChatKey matching query does not exist.
+Internal Server Error: /chat/15/
+Traceback (most recent call last):
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\views.py", line 43, in chat_view
+    encrypted_message = encrypt_message(message_text, chat)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\utils.py", line 37, in encrypt_message
+    chat_key = ChatKey.objects.get(chat=chat)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Omar Hisham\Desktop\chatsafe_venv\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+chat.models.ChatKey.DoesNotExist: ChatKey matching query does not exist.
+C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\utils.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\utils.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Omar Hisham\Desktop\chatsafe_venv\ChatSafe\ChatSafe (1)\chat\utils.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /chat/16/
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
