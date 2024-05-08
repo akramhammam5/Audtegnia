@@ -32,11 +32,16 @@ from django.http import HttpResponseServerError
 import sys
 from .models import *
 from .utils import *
-
+from django.http import HttpResponseForbidden,Http404
 
 @login_required
 def chat_view(request, pk):
     chat = get_object_or_404(Chat, pk=pk)
+
+    # Check if the request.user is one of the chat participants
+    if request.user not in chat.users.all():
+        raise Http404("Chat not found.") #too confuse the hacker
+
     if request.method == "POST":
         message_text = request.POST.get('body', '')
         if message_text:
@@ -51,7 +56,6 @@ def chat_view(request, pk):
     decrypted_messages = [(message.user.username, decrypt_message(message.body, chat)) for message in chat_messages]
     context = {'chat': chat, 'messages': decrypted_messages}
     return render(request, 'chat/chat.html', context)
-
 
 @login_required
 def record(request):
