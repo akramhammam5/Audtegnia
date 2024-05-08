@@ -1,7 +1,7 @@
 # myapp/forms.py
 from django import forms
 from django.contrib.auth.models import User
-from .models import VoiceNote
+from .models import Message,VoiceNote
 
 class EditUsernameForm(forms.ModelForm):
     username = forms.CharField(label='New Username', max_length=150)
@@ -17,8 +17,7 @@ class PasswordResetForm(forms.Form):
 
 
 
-class VoiceNoteForm(forms.ModelForm):
+class MessageForm(forms.ModelForm):
     class Meta:
-        model = VoiceNote
-        fields = ['recipient', 'audio_file']
-
+        model = Message
+        fields = ['body', 'audio_file']

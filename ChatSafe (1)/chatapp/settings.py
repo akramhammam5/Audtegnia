@@ -71,6 +71,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'chatapp.wsgi.application'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Path where media is stored
+MEDIA_URL = '/media/'  # URL to access media
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
