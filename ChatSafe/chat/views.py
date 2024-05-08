@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect
+#view.py
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import *
-from .utils import *
+
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext as _
 from django.contrib.auth.password_validation import (
@@ -27,11 +27,116 @@ from .forms import PasswordResetForm, EditUsernameForm
 import sounddevice as sd
 from scipy.io.wavfile import write
 from django.http import JsonResponse
-from .models import AudioMessage
 import braintree
+from django.http import HttpResponseServerError
+import sys
+from .models import *
+from .utils import *
+from django.http import HttpResponseForbidden,Http404
+from django.http import JsonResponse
+from .models import Chat, VoiceNote
+from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.core.files.base import ContentFile
+import base64
+from django.http import HttpResponse
+from .models import VoiceNote
+from django.core.files.base import ContentFile
+
+
+def serve_voice_note(request, voice_note_id):
+    voice_note = get_object_or_404(VoiceNote, id=voice_note_id)
+    response = HttpResponse(voice_note.audio_file, content_type='audio/wav')
+    response['Content-Disposition'] = 'inline; filename="voice_note_{}.wav"'.format(voice_note_id)
+    return response
+
+@login_required
+def chat_view(request, pk):
+    chat = get_object_or_404(Chat, pk=pk)
+
+    # Verify that the request user is one of the participants in the chat
+    if request.user not in chat.users.all():
+        raise Http404("Chat not found.")  # Confuse potential attackers
+
+    if request.method == "POST":
+        message_text = request.POST.get('body', '')
+        audio_data = request.POST.get('audio_data', None)
+
+        if audio_data:
+            # If audio data is present, decode and save as an audio file
+            audio_file_data = base64.b64decode(audio_data.split(',')[1])
+            audio_file_name = f"voice_note_{request.user.id}_{chat.id}.wav"
+            audio_file = ContentFile(audio_file_data, audio_file_name)
+
+            # Create a message with an audio file attached
+            Message.objects.create(user=request.user, chat=chat, audio_file=audio_file)
+            messages.success(request, "Voice note sent successfully.")
+        elif message_text:
+            # Encrypt and save text message
+            encrypted_message = encrypt_message(message_text, chat)
+            Message.objects.create(user=request.user, chat=chat, body=encrypted_message)
+            messages.success(request, "Message sent successfully.")
+        else:
+            messages.error(request, "Message cannot be empty.")
+
+        return redirect('chat', pk=pk)
+
+    # Fetch and decrypt all messages in the chat
+    chat_messages = Message.objects.filter(chat=chat)
+    decrypted_messages = [
+        {
+            'user': message.user.username,
+            'body': decrypt_message(message.body, chat) if message.body else None,
+            'audio_file': message.audio_file.url if message.audio_file else None
+        }
+        for message in chat_messages
+    ]
+
+    # Pass chat and messages to the context
+    context = {'chat': chat, 'messages': decrypted_messages}
+    return render(request, 'chat/chat.html', context)
+
+@login_required
+def create_voice_note(request, chat_id):
+    if request.method == "POST":
+        chat = get_object_or_404(Chat, id=chat_id)
+        if request.user not in chat.users.all():
+            return JsonResponse({'error': 'User not authorized for this chat'}, status=403)
+
+        audio_file = request.FILES.get('audio_data')
+        if audio_file:
+            # The audio file is now handled by Django's FileField and saved to the specified directory
+            voice_note = VoiceNote.objects.create(
+                sender=request.user,
+                recipient=chat.users.exclude(id=request.user.id).first(),  # Assuming 1-on-1 chat
+                audio_file=audio_file,
+                title='Voice Note'
+            )
+            return JsonResponse({'message': 'Voice note uploaded successfully', 'voice_note_id': voice_note.id})
+        else:
+            return JsonResponse({'error': 'No audio file provided'}, status=400)
 
 
 
+
+
+
+
+
+@login_required
+def record(request):
+   return render(request, 'chat/create_voice_note.html', {'form': form})
+
+@login_required
+def receive_voice_notes(request):
+    voice_notes = VoiceNote.objects.filter(recipient=request.user)
+    return render(request, 'chat/receive_voice_note.html', {'voice_notes': voice_notes})
+
+@login_required
+def playback_voice_note(request, voice_note_id):
+    voice_note = VoiceNote.objects.get(pk=voice_note_id)
+    return render(request, 'chat/playback_voice_note.html', {'voice_note': voice_note})
+    
 def pay(request):
     client_token = braintree.ClientToken.generate()
     return render(request, 'payment.html', {'client_token': client_token})
@@ -61,28 +166,6 @@ def payment(request):
             return render(request, 'chat/payment_fail.html', {'error_msg': error_msg})
 
     return render(request, 'chat/payment.html')
-
-
-def record_and_send(request):
-    freq = 44100
-    frames = 1000000  # Record a large number of frames
-
-    recording = sd.rec(frames, samplerate=freq, channels=2, dtype='int16')
-
-    try:
-        sd.wait()
-    except KeyboardInterrupt:
-        pass
-
-    write("recording.wav", freq, recording)
-
-    # Save the recorded audio to the database
-    audio_message = AudioMessage.objects.create(audio_file="recording.wav")
-
-    # Assuming you have a function to send audio messages
-    send_audio_message(audio_message.audio_file.url)
-
-    return JsonResponse({"message": "Audio recorded, saved, and sent successfully."})
 
 
 def hide(request):
@@ -179,21 +262,6 @@ def logout_user(request):
 
 
 
-
-@login_required(login_url='home')
-def chat_view(request, pk):
-    chat = Chat.objects.get(id=pk)
-    messages = Message.objects.filter(chat=chat)
-
-    if request.method == "POST":
-        body = request.POST['body']
-        Message.objects.create(user=request.user, chat=chat, body=body)
-
-    context = {
-        'body_messages': messages,
-    }
-    return render(request, 'chat/chat.html', context)
-
 @login_required(login_url='home')
 def new_chat(request, pk):
     if pk == 0:
@@ -269,4 +337,24 @@ def validate_password_manually(password):
 
     if errors:
         raise ValidationError(errors)
+    
+def record_and_send(request):
+    freq = 44100
+    frames = 1000000  # Record a large number of frames
 
+    recording = sd.rec(frames, samplerate=freq, channels=2, dtype='int16')
+
+    try:
+        sd.wait()
+    except KeyboardInterrupt:
+        pass
+
+    write("recording.wav", freq, recording)
+
+    # Save the recorded audio to the database
+    audio_message = AudioMessage.objects.create(audio_file="recording.wav")
+
+    # Assuming you have a function to send audio messages
+    send_audio_message(audio_message.audio_file.url)
+
+    return JsonResponse({"message": "Audio recorded, saved, and sent successfully."})

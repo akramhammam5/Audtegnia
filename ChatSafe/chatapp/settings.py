@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import secrets
 from pathlib import Path
 import os
 import braintree
@@ -71,6 +71,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'chatapp.wsgi.application'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Path where media is stored
+MEDIA_URL = '/media/'  # URL to access media
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -126,7 +128,7 @@ EMAIL_HOST_PASSWORD = 'onfp cams kbqr hkpi '
 
 EMAIL_TIMEOUT = 30 
 
-
+ENCRYPTION_KEY = b'SSBsb3ZlIGVuY3J5cHRpb25AMTIz=='
 
 braintree.Configuration.configure(
     braintree.Environment.Sandbox,
@@ -135,7 +137,8 @@ braintree.Configuration.configure(
     private_key='02a4e6ecde8d50902548b74089b0236d'
 )
 
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
@@ -147,3 +150,22 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}

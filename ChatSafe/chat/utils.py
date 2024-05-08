@@ -1,6 +1,13 @@
+#utils.py
 import os
 import wave
 import argparse
+from Crypto.Cipher import AES
+from cryptography.fernet import Fernet, InvalidToken
+import logging
+from .models import ChatKey
+import base64
+
 
 def em_audio(af, string, output):
     waveaudio = wave.open(af, mode='rb')
@@ -26,57 +33,32 @@ def ex_msg(af):
     waveaudio.close()
     return msg
 
-def encrypt_text(text, key):
-    # Ensure the key is 32 bytes (256 bits) long
-    key = key.ljust(32, b'\0')[:32]
-    
-    # Generate a random IV (Initialization Vector)
-    iv = os.urandom(16)
-    
-    # Create an AES cipher object with CBC mode
-    cipher = Cipher(algorithms.AES(key), modes.CFB(iv), backend=default_backend())
-    encryptor = cipher.encryptor()
-    
-    # Add padding to the plaintext
-    padder = padding.PKCS7(algorithms.AES.block_size).padder()
-    padded_data = padder.update(text.encode('utf-8')) + padder.finalize()
-    
-    # Encrypt the padded data
-    ciphertext = encryptor.update(padded_data) + encryptor.finalize()
-    
-    # Combine the IV and ciphertext
-    encrypted_text = iv + ciphertext
-    
-    # Encode the result in base64 for easier representation
-    return b64encode(encrypted_text).decode()
-
-def decrypt_text(encrypted_text, key):
-    # Ensure the key is 32 bytes (256 bits) long
-    key = key.ljust(32, b'\0')[:32]
-    
-    # Decode the base64 encoded input
-    encrypted_text = b64decode(encrypted_text)
-    
-    # Extract the IV and ciphertext
-    iv = encrypted_text[:16]
-    ciphertext = encrypted_text[16:]
-    
-    # Create an AES cipher object with CBC mode
-    cipher = Cipher(algorithms.AES(key), modes.CFB(iv), backend=default_backend())
-    decryptor = cipher.decryptor()
-    
-    # Decrypt the ciphertext
-    decrypted_data = decryptor.update(ciphertext) + decryptor.finalize()
-    
-    # Remove the padding
-    unpadder = padding.PKCS7(algorithms.AES.block_size).unpadder()
-    unpadded_data = unpadder.update(decrypted_data) + unpadder.finalize()
-    
-    # Decode the bytes to get the original text
-    return unpadded_data.decode('utf-8')
 
 
+def encrypt_message(message, chat):
+    chat_key = ChatKey.objects.get(chat=chat)
+    print(f"Encryption key: {chat_key.key}")  # Debug: Print encryption key
+    cipher_suite = Fernet(chat_key.key.encode())
+    encrypted_data = cipher_suite.encrypt(message.encode())
+    encoded_data = base64.b64encode(encrypted_data).decode()  # Convert binary data to base64 encoded string
+    print(f"Encrypted message (ciphertext): {encoded_data}")  # Debug: Print ciphertext after encryption
+    return encoded_data
 
+def decrypt_message(encrypted_message, chat):
+    chat_key = ChatKey.objects.get(chat=chat)
+    print(f"Decryption key: {chat_key.key}")  # Debug: Print decryption key
+    print(f"Encrypted message to decrypt (ciphertext): {encrypted_message}")  # Debug: Print ciphertext before decryption
+    cipher_suite = Fernet(chat_key.key.encode())
+    try:
+        decoded_data = base64.b64decode(encrypted_message.encode())  # Convert base64 encoded string back to binary
+        decrypted_data = cipher_suite.decrypt(decoded_data).decode()
+        print(f"Decrypted message (plaintext): {decrypted_data}")  # Debug: Print plaintext after decryption
+        return decrypted_data
+    except InvalidToken:
+        return "<Invalid decryption>"
+    except Exception as e:
+        return f"<Decryption error: {str(e)}>"
+    
 import requests
 from django.conf import settings
 

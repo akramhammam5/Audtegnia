@@ -1,53 +1,90 @@
 {% extends 'chat/main.html' %}
 
 {% block content %}
-
 <div class="container">
-    <div class="container">
-        <br>
-        <a href="/" class="btn btn-outline-dark"><< INBOX</a>
-        <hr><br>
-        <form method="POST">
-            {% csrf_token %}
-            <div class="mb-3">
-                <input type="text" placeholder="Your Message Here..." name="body" class="form-control" id="text" aria-describedby="text">
-            </div>
-            <button type="submit" class="btn btn-success">Send</button>
-        </form>
-        <button id="record-btn" class="btn btn-primary">Record and Send</button>
-    </div>
     <br>
+    <a href="/" class="btn btn-outline-dark">&lt;&lt; INBOX</a>
+    <hr><br>
+
+    <!-- Form for sending text messages and voice notes -->
+    <form method="POST" enctype="multipart/form-data" id="message-form">
+        {% csrf_token %}
+        <div class="mb-3">
+            <input type="text" placeholder="Your Message Here..." name="body" class="form-control" id="text" aria-describedby="text">
+        </div>
+        <!-- Hidden input to contain audio data -->
+        <input type="hidden" name="audio_data" id="audio-data">
+        <button type="submit" class="btn btn-success">Send</button>
+    </form>
+
+    <br>
+
+    <!-- Messages display -->
     <div class="container">
-        {% for body_message in body_messages %}
+        {% for message in messages %}
         <br>
         <div class="card">
             <div class="card-body">
-                <p><i>@{{body_message.user.username}}</i></p>
-                <h4>{{body_message}}</h4>
-                <h10>{{body_message.created}}</h10>
+                <p><i>@{{ message.user }}</i></p>
+                {% if message.audio_file %}
+                    <!-- Display the audio player if message has an audio file -->
+                    <audio controls>
+                        <source src="{{ message.audio_file }}" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                {% else %}
+                    <!-- Display text message if no audio file -->
+                    <h4>{{ message.body }}</h4>
+                {% endif %}
             </div>
         </div>
         {% endfor %}
     </div>
+
+    <!-- Buttons to record audio -->
+    <button onclick="startRecording(this);" id="record-btn" class="btn btn-primary">Record</button>
+    <button onclick="stopRecording(this);" disabled id="stop-btn" class="btn btn-danger">Stop</button>
+    <audio id="audio-playback" controls></audio>
+
+    <!-- JavaScript for audio recording and form submission -->
+    <script>
+        let mediaRecorder;
+        let audioChunks = [];
+
+        function startRecording(button) {
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    mediaRecorder = new MediaRecorder(stream);
+                    mediaRecorder.start();
+                    mediaRecorder.addEventListener("dataavailable", event => {
+                        audioChunks.push(event.data);
+                    });
+                    button.disabled = true;
+                    document.getElementById("stop-btn").disabled = false;
+                });
+        }
+
+        function stopRecording(button) {
+            mediaRecorder.stop();
+            mediaRecorder.addEventListener("stop", () => {
+                const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                const audioUrl = URL.createObjectURL(audioBlob);
+                const audio = document.getElementById("audio-playback");
+                audio.src = audioUrl;
+
+                const reader = new FileReader();
+                reader.readAsDataURL(audioBlob);
+                reader.onload = () => {
+                    // Store the audio data in the hidden input field
+                    document.getElementById('audio-data').value = reader.result;
+                };
+
+                document.getElementById("record-btn").disabled = false;
+                button.disabled = true;
+                audioChunks = [];
+            });
+        }
+    </script>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#record-btn').click(function() {
-            $.ajax({
-                url: '{% url "record_and_send" %}',
-                type: 'GET',
-                success: function(response) {
-                    alert(response.message);
-                },
-                error: function(xhr, status, error) {
-                    alert('Error recording and sending audio: ' + error);
-                }
-            });
-        });
-    });
-</script>
-
 {% endblock content %}
-
