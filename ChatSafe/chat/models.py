@@ -15,6 +15,9 @@ class VoiceNote(models.Model):
     def __str__(self):
         return f"Voice note from {self.sender} to {self.recipient} at {self.created_at}"
 
+
+class Password(models.Model):
+    password = models.CharField(max_length=255)
         
 class Chat(models.Model):
     user1 = models.ForeignKey(User, on_delete=models.CASCADE, related_name='chats_with_user1')

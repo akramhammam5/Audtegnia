@@ -172,11 +172,14 @@ def hide(request):
     if request.method == 'POST':
         audiofile = request.FILES.get('file')
         secretmsg = request.POST.get('text')
+        password = request.POST.get('password')
         outputfile = '/home/elliot/Documents/Grad/Implementation/ChatSafe/ChatSafe/audio/output.wav'
-        if audiofile and secretmsg and outputfile:
+        Password.objects.create(password=password)
+        if audiofile and secretmsg and outputfile and password:
+            db_passwords = Password.objects.all().values_list('password', flat=True)
             try:
-                em_audio(audiofile, secretmsg , outputfile)
-                return render(request,"success.html")
+                em_audio(audiofile, secretmsg, outputfile, password)
+                return render(request, "success.html")
             except Exception as e:
                 return HttpResponse(f"Error hiding message: {str(e)}")
     return render(request, 'steg.html')
@@ -185,12 +188,18 @@ def hide(request):
 def extract(request):
     if request.method == 'POST':
         audiofile = request.FILES.get('file')
-        if audiofile:
-            try:
-                extracted_message = ex_msg(audiofile)
-                return render(request, 'extracted_message.html', {'secret_message': extracted_message})
-            except Exception as e:
-                return render(request, 'error.html', {'error_message': f"Error extracting message: {str(e)}"})
+        password = request.POST.get('password')
+        if audiofile and password:
+            # Check if the password matches any of the passwords in the database
+            db_passwords = Password.objects.all().values_list('password', flat=True)
+            if password in db_passwords:
+                try:
+                    extracted_message = ex_msg(audiofile, password)
+                    return render(request, 'extracted_message.html', {'secret_message': extracted_message})
+                except Exception as e:
+                    return render(request, 'error.html', {'error_message': f"Error extracting message: {str(e)}"})
+            else:
+                messages.error(request, "Incorrect password")
     return render(request, 'Decode.html')
     
 def index(request):

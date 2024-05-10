@@ -7,7 +7,9 @@ from cryptography.fernet import Fernet, InvalidToken
 import logging
 from .models import ChatKey
 import base64
-
+from Crypto.Cipher import AES
+from Crypto.Protocol.KDF import PBKDF2
+from Crypto.Util.Padding import pad, unpad
 
 
 def checkFlip(data,a,b):
@@ -24,7 +26,9 @@ def checkFlip(data,a,b):
 		return data ^ 3
 
 
-def em_audio(af, string, output):
+
+
+def em_audio(af, string, output, password):
     waveaudio = wave.open(af, mode='rb')
     frame_bytes = bytearray(list(waveaudio.readframes(waveaudio.getnframes())))
     string = string + int(((2*len(frame_bytes))-(len(string)*8*8))/8) *'#'
@@ -50,10 +54,7 @@ def em_audio(af, string, output):
     newAudio.close()
     waveaudio.close()
 
-
-
-
-def ex_msg(af):
+def ex_msg(af, password):
     waveaudio = wave.open(af, mode='rb')
     frame_bytes = bytearray(list(waveaudio.readframes(waveaudio.getnframes())))
     extracted = []
