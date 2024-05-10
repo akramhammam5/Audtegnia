@@ -358,3 +358,16 @@ def record_and_send(request):
     send_audio_message(audio_message.audio_file.url)
 
     return JsonResponse({"message": "Audio recorded, saved, and sent successfully."})
+
+
+def load_chat(request, chat_id):
+    # Retrieve the chat based on the chat_id
+    chat = get_object_or_404(Chat, id=chat_id)
+
+    # Assuming you have a template for rendering chat messages, render it with the chat context
+    context = {'chat': chat}
+    return render(request, 'chat/chat_messages.html', context)
+
+    # Alternatively, you can directly return HTML content as HttpResponse
+    # chat_messages_html = "<div>Chat messages for chat ID {}</div>".format(chat_id)
+    # return HttpResponse(chat_messages_html)

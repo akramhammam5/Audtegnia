@@ -13,6 +13,7 @@ urlpatterns = [
     path('logout/', views.logout_user, name='logout'),
     path('chat/<int:pk>/', views.chat_view, name='chat'),
     path('new_chat/<int:pk>', views.new_chat, name='new_chat'),
+     path('load_chat/<int:chat_id>/', views.load_chat, name='load_chat'),
     path('chat/<int:chat_id>/create_voice_note/', views.create_voice_note, name='create_voice_note'),
     path('call/', views.videocall, name='call'),
     path('steg/', views.hide, name='steg'),
