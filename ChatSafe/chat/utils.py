@@ -12,70 +12,29 @@ from Crypto.Protocol.KDF import PBKDF2
 from Crypto.Util.Padding import pad, unpad
 
 
-def checkFlip(data,a,b):
-	store = data & 12
-	if store == 0 and (a == 0 and b == 0):
-		return data
-	elif store == 4 and (a == 0 and b == 1):
-		return data
-	elif store == 8 and (a == 1 and b == 0):
-		return data
-	elif store == 12 and (a == 1 and b == 1):
-		return data
-	else:
-		return data ^ 3
-
-
-
-
 def em_audio(af, string, output, password):
     waveaudio = wave.open(af, mode='rb')
     frame_bytes = bytearray(list(waveaudio.readframes(waveaudio.getnframes())))
-    string = string + int(((2*len(frame_bytes))-(len(string)*8*8))/8) *'#'
-    bits = list(map(int, ''.join([bin(ord(i)).lstrip('0b').rjust(8,'0') for i in string])))
-    j = 0
-    for i in range(0,len(frame_bytes),2):
-        a = bits[i]
-        b = bits[i+1]
-        frame_bytes[j] = checkFlip(frame_bytes[j],a,b)
-        frame_bytes[j] = frame_bytes[j] & 243
-        if a==0 and b==1:
-            frame_bytes[j] = frame_bytes[j] + 4
-        elif a==1 and b==0:
-            frame_bytes[j] = frame_bytes[j] + 8
-        elif a==1 and b==1:
-            frame_bytes[j] = frame_bytes[j] + 12
-        j = j + 1
+    string = string + int((len(frame_bytes) - (len(string) * 8 * 8)) / 8) * '#'
+    bits = list(map(int, ''.join([bin(ord(i)).lstrip('0b').rjust(8, '0') for i in string])))
+    for i, bit in enumerate(bits):
+        frame_bytes[i] = (frame_bytes[i] & 254) | bit
     frame_modified = bytes(frame_bytes)
-    newAudio = wave.open(output, 'wb')
-    newAudio.setparams(waveaudio.getparams())
-    newAudio.writeframes(frame_modified)
-
-    newAudio.close()
+    with wave.open(output, 'wb') as fd:
+        fd.setparams(waveaudio.getparams())
+        fd.writeframes(frame_modified)
     waveaudio.close()
+
+
 
 def ex_msg(af, password):
     waveaudio = wave.open(af, mode='rb')
     frame_bytes = bytearray(list(waveaudio.readframes(waveaudio.getnframes())))
-    extracted = []
-    for i in range(len(frame_bytes)):
-        frame_bytes[i] = frame_bytes[i] & 12
-        if frame_bytes[i] == 0:
-            extracted.append(0)
-            extracted.append(0)
-        elif frame_bytes[i] == 4:
-            extracted.append(0)    
-            extracted.append(1) 
-        elif frame_bytes[i] == 8:
-            extracted.append(1)
-            extracted.append(0)
-        elif frame_bytes[i] == 12:
-            extracted.append(1)
-            extracted.append(1)
-    string = "".join(chr(int("".join(map(str,extracted[i:i+8])),2)) for i in range(0,len(extracted),8))
-    decoded = string.split("###")[0]
+    extracted = [frame_bytes[i] & 1 for i in range(len(frame_bytes))]
+    string = "".join(chr(int("".join(map(str, extracted[i:i + 8])), 2)) for i in range(0, len(extracted), 8))
+    msg = string.split("###")[0]
     waveaudio.close()
-    return decoded
+    return msg
  
 
 
