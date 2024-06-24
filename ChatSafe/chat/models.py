@@ -49,12 +49,11 @@ class ChatKey(models.Model):
 class Message(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     chat = models.ForeignKey(Chat, on_delete=models.CASCADE)
-    body = models.TextField(blank=True, null=True)  # Allow empty messages for when there's only an audio file
-    audio_file = models.FileField(upload_to='messages/', null=True, blank=True)  # Optional field for audio messages
-    created = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"{self.user.username}: {'Audio Message' if self.audio_file else self.body}"
+    body = models.TextField(null=True, blank=True)
+    audio_file = models.FileField(upload_to='audio_files/', null=True, blank=True)
+    photo_file = models.ImageField(upload_to='photo_files/', null=True, blank=True)
+    document_file = models.FileField(upload_to='document_files/', null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)  # Ensure this field exists
 
     class Meta:
-        ordering = ["-created"]
+        ordering = ['created_at']  # Refer to the correct field name

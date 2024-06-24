@@ -61,16 +61,22 @@ def chat_view(request, pk):
     if request.method == "POST":
         message_text = request.POST.get('body', '')
         audio_data = request.POST.get('audio_data', None)
+        photo_file = request.FILES.get('photo_file', None)
+        document_file = request.FILES.get('document_file', None)
 
         if audio_data:
             # If audio data is present, decode and save as an audio file
             audio_file_data = base64.b64decode(audio_data.split(',')[1])
             audio_file_name = f"voice_note_{request.user.id}_{chat.id}.wav"
             audio_file = ContentFile(audio_file_data, audio_file_name)
-
-            # Create a message with an audio file attached
             Message.objects.create(user=request.user, chat=chat, audio_file=audio_file)
             messages.success(request, "Voice note sent successfully.")
+        elif photo_file:
+            Message.objects.create(user=request.user, chat=chat, photo_file=photo_file)
+            messages.success(request, "Photo sent successfully.")
+        elif document_file:
+            Message.objects.create(user=request.user, chat=chat, document_file=document_file)
+            messages.success(request, "Document sent successfully.")
         elif message_text:
             # Encrypt and save text message
             encrypted_message = encrypt_message(message_text, chat)
@@ -87,7 +93,9 @@ def chat_view(request, pk):
         {
             'user': message.user.username,
             'body': decrypt_message(message.body, chat) if message.body else None,
-            'audio_file': message.audio_file.url if message.audio_file else None
+            'audio_file': message.audio_file.url if message.audio_file else None,
+            'photo_file': message.photo_file.url if message.photo_file else None,
+            'document_file': message.document_file.url if message.document_file else None,
         }
         for message in chat_messages
     ]
