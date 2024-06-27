@@ -10,8 +10,47 @@ import base64
 from Crypto.Cipher import AES
 from Crypto.Protocol.KDF import PBKDF2
 from Crypto.Util.Padding import pad, unpad
+import tempfile
+import struct
 
 
+def embed_wav_files(cover_wav_path, hidden_wav_path):
+    with wave.open(cover_wav_path, 'rb') as cover_audio:
+        with wave.open(hidden_wav_path, 'rb') as hidden_audio:
+            params = cover_audio.getparams()
+            output_path = 'media/embedded.wav'
+            
+            with wave.open(output_path, 'wb') as output_audio:
+                output_audio.setparams(params)
+                cover_frames = bytearray(cover_audio.readframes(params.nframes))
+                hidden_frames = bytearray(hidden_audio.readframes(hidden_audio.getnframes()))
+
+                hidden_len = len(hidden_frames)
+                for i in range(hidden_len):
+                    cover_frames[i] = (cover_frames[i] & 0xFC) | (hidden_frames[i] >> 6)
+                
+                output_audio.writeframes(cover_frames)
+                
+    return output_path
+
+def extract_wav_file(embedded_wav_path):
+    with wave.open(embedded_wav_path, 'rb') as embedded_audio:
+        params = embedded_audio.getparams()
+        output_path = 'media/extracted.wav'
+        
+        with wave.open(output_path, 'wb') as output_audio:
+            output_audio.setparams(params)
+            embedded_frames = bytearray(embedded_audio.readframes(params.nframes))
+            extracted_frames = bytearray(len(embedded_frames))
+            
+            for i in range(len(embedded_frames)):
+                extracted_frames[i] = (embedded_frames[i] & 0x03) << 6
+            
+            output_audio.writeframes(extracted_frames)
+            
+    return output_path
+    
+    
 def em_audio(af, string, output, password):
     waveaudio = wave.open(af, mode='rb')
     frame_bytes = bytearray(list(waveaudio.readframes(waveaudio.getnframes())))

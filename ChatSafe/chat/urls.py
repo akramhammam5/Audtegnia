@@ -28,5 +28,6 @@ urlpatterns = [
     path('payment/', views.payment, name='payment'),
     path('receive/', views.receive_voice_notes, name='receive_voice_notes'),
     path('playback/<int:voice_note_id>/', views.playback_voice_note, name='playback_voice_note'),
+    path('wav/', views.embedwav, name='WAV'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

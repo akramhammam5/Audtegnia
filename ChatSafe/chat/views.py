@@ -23,7 +23,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from .utils import send_password_reset_email
-from .forms import PasswordResetForm, EditUsernameForm
+from .forms import PasswordResetForm, EditUsernameForm, WavFileForm
 import sounddevice as sd
 from scipy.io.wavfile import write
 from django.http import JsonResponse
@@ -42,6 +42,53 @@ import base64
 from django.http import HttpResponse
 from .models import VoiceNote
 from django.core.files.base import ContentFile
+
+
+
+
+def embedwav(request):
+    if request.method == 'POST':
+        form1 = WavFileForm(request.POST, request.FILES, prefix='form1')
+        form2 = WavFileForm(request.POST, request.FILES, prefix='form2')
+        form3 = WavFileForm(request.POST, request.FILES, prefix='form3')
+        if form1.is_valid() and form2.is_valid():
+            cover_wav = form1.cleaned_data['file']
+            hidden_wav = form2.cleaned_data['file']
+            
+            # Use temporary files to save uploaded files
+            with tempfile.NamedTemporaryFile(delete=False) as temp_cover:
+                temp_cover.write(cover_wav.read())
+                cover_wav_path = temp_cover.name
+            
+            with tempfile.NamedTemporaryFile(delete=False) as temp_hidden:
+                temp_hidden.write(hidden_wav.read())
+                hidden_wav_path = temp_hidden.name
+
+            output_path = embed_wav_files(cover_wav_path, hidden_wav_path)
+
+            with open(output_path, 'rb') as f:
+                response = HttpResponse(f.read(), content_type='audio/wav')
+                response['Content-Disposition'] = 'attachment; filename="embedded.wav"'
+                return response
+        elif form3.is_valid():
+            embedded_wav = form3.cleaned_data['file']
+            
+            # Use a temporary file to save the uploaded file
+            with tempfile.NamedTemporaryFile(delete=False) as temp_embedded:
+                temp_embedded.write(embedded_wav.read())
+                embedded_wav_path = temp_embedded.name
+
+            output_path = extract_wav_file(embedded_wav_path)
+
+            with open(output_path, 'rb') as f:
+                response = HttpResponse(f.read(), content_type='audio/wav')
+                response['Content-Disposition'] = 'attachment; filename="extracted.wav"'
+                return response
+    else:
+        form1 = WavFileForm(prefix='form1')
+        form2 = WavFileForm(prefix='form2')
+        form3 = WavFileForm(prefix='form3')
+    return render(request, 'wav.html', {'form1': form1, 'form2': form2, 'form3': form3})
 
 
 def serve_voice_note(request, voice_note_id):

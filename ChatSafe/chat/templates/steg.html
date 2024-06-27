@@ -11,7 +11,7 @@
     href="https://fonts.googleapis.com/css2?family=Tektur:wght@600&display=swap"
     rel="stylesheet"
   />
-  <title>ChatSafe Demo</title>
+  <title>Audstegnia</title>
   <style>
     body {
       font-family: "Tektur", sans-serif;
@@ -35,22 +35,22 @@
       display: flex;
       align-items: center;
       gap: 50px;
+    }
 
-      & ul {
-        list-style: none;
-        font-size: 2rem;
-        padding: 0;
+    nav ul {
+      list-style: none;
+      font-size: 2rem;
+      padding: 0;
+    }
 
-        & a{
-            color: white;
-            margin-right: 30px;
-            transition: all 0.3s ease;
+    nav a {
+      color: white;
+      margin-right: 30px;
+      transition: all 0.3s ease;
+    }
 
-            &:hover{
-                color: #1976d2;
-            }
-        }
-      }
+    nav a:hover {
+      color: #1976d2;
     }
 
     .upload-form {
@@ -81,7 +81,7 @@
       border-radius: 5px;
       border: 1px solid #1976d2;
       font-size: 1rem;
-      transition: background-color 0.3s ease ;
+      transition: background-color 0.3s ease;
     }
 
     label:hover,
@@ -100,7 +100,6 @@
       border-radius: 5px;
       font-size: 1.2rem;
       border: 1px solid #1976d2;
-
       color: #0a2b4b;
       transition: border 0.3s ease;
     }
@@ -118,20 +117,34 @@
       height: 100%;
       z-index: -1;
       fill: #0000005e;
-      }
-  .extract-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  background-color: green; /* Changed color to green */
-  color: white;
-  border-radius: 5px;
-  border: 1px solid green; /* Changed border color to green */
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
-}
+    }
+    .audio
+    {
+      position: absolute;
+      top: 20px;
+      right: 150px;
+      padding: 10px 20px;
+      background-color: green;
+      color: white;
+      border-radius: 5px;
+      border: 1px solid green;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+    .extract-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: green;
+      color: white;
+      border-radius: 5px;
+      border: 1px solid green;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
   </style>
 </head>
 
@@ -166,28 +179,35 @@
       <label for="password">Enter password</label>
       <input class="txt-input" type="password" id="password" name="password" required />
     </div>
+    
     <button type="submit">Submit</button>
   </form>
   <a href="{% url 'extract' %}" class="extract-button">Extract</a>
+  <a href="{% url 'WAV' %}" class="audio" >Audio Tool</a>
 </div>
-<script>
- function hideMessage() {
-  var form = document.getElementById("steganographyForm");
-  var formData = new FormData(form);
 
-  // You can use AJAX to send the form data to the Django view
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "/steganography/", true);
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      // Handle success (if needed)
-      console.log(xhr.responseText);
-    } else {
-      // Handle error (if needed)
-      console.error("Error:", xhr.statusText);
-    }
-  };
-  xhr.send(formData);
-}
-  
+<script>
+  function hideMessage() {
+    var form = document.getElementById("steganographyForm");
+    var formData = new FormData(form);
+
+    // You can use AJAX to send the form data to the Django view
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/steganography/", true);
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        // Handle success (if needed)
+        console.log(xhr.responseText);
+      } else {
+        // Handle error (if needed)
+        console.error("Error:", xhr.statusText);
+      }
+    };
+    xhr.send(formData);
+  }
+
+  document.getElementById('file').addEventListener('change', function() {
+    var fileName = this.files[0].name;
+    document.getElementById('file-name').textContent = fileName;
+  });
 </script>

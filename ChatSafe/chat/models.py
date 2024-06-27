@@ -5,6 +5,10 @@ from cryptography.fernet import Fernet
 import base64
 import hashlib
 
+class WavFile(models.Model):
+    file = models.FileField(upload_to='wav_files/')
+
+
 class VoiceNote(models.Model):
     sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sent_voice_notes')
     recipient = models.ForeignKey(User, on_delete=models.CASCADE, related_name='received_voice_notes')
